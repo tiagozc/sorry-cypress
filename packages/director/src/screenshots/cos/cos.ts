@@ -5,6 +5,7 @@ import { sanitizeS3KeyPrefix } from '../utils';
 import {
   COS_ACCESSKEY,
   COS_BUCKET,
+  COS_ENDPOINT,
   COS_IMAGE_KEY_PREFIX,
   COS_REGION,
   COS_SECRETKEY,
@@ -12,8 +13,8 @@ import {
 } from './config';
 import { S3SignedUploadResult } from './types';
 
-const BUCKET_URL = `https://s3.${COS_REGION}.cloud-object-storage.appdomain.cloud`;
-const COS_READ_ENDPOINT = `https://${COS_BUCKET}.s3.${COS_REGION}.cloud-object-storage.appdomain.cloud`;
+const BUCKET_URL = `https://s3.${COS_REGION}.${COS_ENDPOINT}`;
+const COS_READ_ENDPOINT = `https://${COS_BUCKET}.s3.${COS_REGION}.${COS_ENDPOINT}`;
 const ImageContentType = 'image/png';
 const VideoContentType = 'video/mp4';
 
